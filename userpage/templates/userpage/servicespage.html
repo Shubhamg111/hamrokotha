@@ -1,0 +1,53 @@
+{% extends "layouts/index.html" %}
+
+{% block content %}
+{% include "includesuser/header.html" %}
+ <style>
+    #services{
+        margin-top: 150px;
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+ </style> 
+<!-- Services Section -->
+<section id="services">
+    <h3>Our Services</h3>
+    <div class="service">
+        <div class="icon">
+            <!-- Add an icon or image representing the service here -->
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+        </div>
+        <div class="description">
+            <h3>Accommodation Search</h3>
+            <p>Our platform provides a comprehensive database of available rooms and flats in Kathmandu. We make it
+                easy for students to find accommodations that suit their preferences and budgets.</p>
+        </div>
+    </div>
+    <div class="service">
+        <div class="icon">
+            <!-- Add an icon or image representing the service here -->
+            <i class="fa-solid fa-stopwatch-20"></i>
+        </div>
+        <div class="description">
+            <h3>Real-Time Updates</h3>
+            <p>We offer real-time updates on the availability of rooms and flats. Students can access the latest
+                information and make informed decisions.</p>
+        </div>
+    </div>
+    <div class="service">
+        <div class="icon">
+            <!-- Add an icon or image representing the service here -->
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <div class="description">
+            <h3>Reservation and Booking</h3>
+            <p>Our platform allows users to request reservations and book accommodations online. It's a hassle-free
+                process to secure your preferred room or flat.</p>
+        </div>
+    </div>
+</section>
+{% include "includesuser/footer.html" %}
+
+{% endblock  %}

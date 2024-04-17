@@ -1,0 +1,15 @@
+{% extends "layouts/index.html" %}
+{% block content %}
+{% include "includesuser/header.html" %}
+
+<div class="container">
+<h2>Upload Post</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+{% include "includesuser/footer.html" %}
+
+{% endblock%}

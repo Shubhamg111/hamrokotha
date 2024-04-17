@@ -1,0 +1,500 @@
+{% extends "layouts/index.html" %}
+{% load static %}
+{% block content %}
+{% include "includesuser/header.html" %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+    /* banner-section */
+    #banner {
+        margin-top: 0px;
+        /* width: 1440px; */
+        height: 400px;
+
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+        background-image: url("../static/images/banner.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+    }
+
+    .image .layer {
+        height: 100%;
+        width: 100%;
+        background-color: #c2b5b52e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image .layer p {
+        font-size: 40px;
+        font-weight: 900;
+        color: #d1a30c;
+        text-transform: capitalize;
+    }
+
+    /* search options */
+    #search {
+        margin-top: 50px;
+        background-color: white;
+        width: 1440px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #search label {
+        font-size: 16px;
+    }
+
+    .location input[type="text"] {
+        height: 30px;
+        width: 200px;
+        border: none;
+        outline: none;
+        background-color: aliceblue;
+        border-radius: 3px;
+        padding-left: 10px;
+    }
+
+    .type select {
+        height: 30px;
+        width: 100px;
+        border: none;
+        outline: none;
+        background-color: aliceblue;
+        border-radius: 3px;
+        padding-left: 10px;
+    }
+
+    .price input[type="number"] {
+        height: 30px;
+        width: 200px;
+        border: none;
+        outline: none;
+        background-color: aliceblue;
+        border-radius: 3px;
+        padding-left: 10px;
+    }
+
+    .sort #sort-by {
+        height: 30px;
+        width: 100px;
+        border: none;
+        outline: none;
+        background-color: aliceblue;
+        border-radius: 3px;
+        padding-left: 10px;
+    }
+
+    /* list of property */
+    #property-list-label {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .list-of-property {
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .list-of-property p {
+        font-size: 12px;
+    }
+
+    /* this is common style for room and flats info */
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .flat-list {
+        /* background-color: #139bea; */
+        width: 48%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .room-list {
+        width: 48%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .pic-wraper {
+        margin-top: 60px;
+    }
+
+    .pic-wraper img {
+        height: 119px;
+        width: 250px
+    }
+
+
+    /* this is contact us section */
+    #contact-us {
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 120px;
+    }
+
+
+
+    .contact-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 30px;
+
+    }
+
+    #contact-us>p {
+        text-align: center;
+    }
+
+    .contact-info-wraper {
+        width: 300px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        ;
+    }
+
+    .contact-info-wraper .icon {
+        width: 200px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 999;
+    }
+
+    .contact-info-wraper .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-info {
+        margin-top: 10px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .contact-info .info {
+        font-size: 12px;
+    }
+
+    .contact-down {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 130px;
+        margin-top: 90px;
+    }
+
+    .send-message {
+        flex: 1;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        ;
+    }
+
+    .send-message>p {
+        text-align: center;
+    }
+
+    .map-container {
+        flex: 1;
+    }
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 30px;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    button[type="submit"] {
+        padding: 10px;
+        background-color: blue;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        height: 60px;
+        width: 100px
+    }
+
+    button[type="submit"]:hover {
+        background-color: rgb(62, 62, 183);
+
+    }
+
+
+    /* property registration request section */
+
+    .property-registration {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        margin-left: 55px;
+        margin-top: 100px;
+        width: 1410px;
+        background-color: #7285a9;
+    }
+
+    .property-registration .info-top-property-registration {
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-top: 50px;
+    }
+
+    .property-registration .info-foot-property-registration {
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    .request-regisdtration {
+        height: 10%;
+    }
+
+    #property-registration-form {
+        /* margin-top: 50px; */
+        display: flex;
+    }
+
+    #property-registration-form .req-input {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    #property-registration-form .req-input input {
+        height: 40px;
+        width: 200px;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.614);
+        border-radius: 6px;
+    }
+
+    #property-registration-form .req-input p {
+        margin-left: 10px;
+    }
+
+    .registration-botton {
+        height: 50px;
+        width: 100px;
+        background-color: #c92ad1c8;
+        transition: ease-in 0.5s;
+        margin-right: 20px;
+    }
+
+    .registration-botton:hover {
+        background-color: #49044c;
+    }
+</style>
+
+<section>
+
+
+    <!-- this is bannersection -->
+<section id="banner">
+        <div class="image">
+            <div class="layer">
+                <p>unlock your perfect leaving space in kathmandu.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="search">
+        <div class="location">
+            <label for="search-location">Search Location</label>
+            <input type="text" name="search-location" id="search-location" placeholder="Baneswor">
+        </div>
+        <div class="type">
+            <label for="search-type">Type</label>
+            <select name="search-type" id="search-type">
+                <option value="flat">Flat</option>
+                <option value="room">Room</option>
+            </select>
+
+        </div>
+        <div class="price">
+            <label for="search-price">Search By Price</label>
+            <input type="number" name="search-price" id="search-price" placeholder="eg.10000">
+        </div>
+        <div class="sort">
+            <label for="sort-by">Sort By:</label>
+            <select name="sort-by" id="sort-by">
+                <option value="price-low-to-high">Price (Low to High)</option>
+                <option value="price-high-to-low">Price (High to Low)</option>
+            </select>
+        </div>
+    </section>
+
+
+
+
+    <!-- contact us section -->
+     <section id="contact-us">
+        <p>Contact Us</p>
+
+        <div class="contact-container">
+            <div class="contact-info-wraper">
+                <div class="icon">
+                    <i class="fa-solid fa-phone fa-beat" style="color: #424343"></i>
+                </div>
+                <div class="contact-info">
+                    <p class="title">Phone Number</p>
+                    <p class="info">+977 9873654675</p>
+                </div>
+            </div>
+
+            <div class="contact-info-wraper">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope fa-beat" style="color: #424343"></i>
+                </div>
+                <div class="contact-info">
+                    <p class="title">Email</p>
+                    <p class="info">hamrokotha@gamil.com.np</p>
+                </div>
+            </div>
+
+            <div class="contact-info-wraper">
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot fa-beat" style="color: #424343"></i>
+                </div>
+                <div class="contact-info">
+                    <p class="title">Location</p>
+                    <p class="info">Battisputali kathmandu</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-down">
+            <div class="send-message">
+                <p>Send a Message</p>
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7064.842447429838!2d85.33777514130936!3d27.704277953639778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199d17032265%3A0xc7e605b267b03e75!2sBattisputali%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1694025684835!5m2!1sen!2snp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </section> 
+
+
+    <!-- property registration request section -->
+     <section id="register-property"></section>
+
+    <div class="property-registration">
+        <p class="info-top-property-registration">
+            wants to register your property on our site
+        </p>
+
+        <div class="request-registration">
+            <form action="#" id="property-registration-form">
+                <div class="req-input">
+                    <p>Name</p>
+                    <input type="text" id="registration-request" placeholder="your name" required>
+                </div>
+                <div class="req-input">
+                    <p>Email</p>
+                    <input type="email" name="registration-request-email" id="registration-request-email"
+                        placeholder="email" required>
+                </div>
+                <div class="req-input">
+                    <p>Phone</p>
+                    <input type="number" id="registration-request-phonenumber" placeholder="your number" required>
+                </div>
+                <div class="req-input">
+                    <p>Location</p>
+                    <input type="text" name="registration-request-location" id="registration-request-location"
+                        placeholder="your location" required>
+                </div>
+            </form>
+        </div>
+        <button type="submit" class="btn registration-botton">Send</button>
+        <p class="info-foot-property-registration">
+            We will response on your request within 24hrs.
+        </p>
+    </div> 
+</section>
+
+
+{% include "includesuser/footer.html" %}
+
+{% endblock %}

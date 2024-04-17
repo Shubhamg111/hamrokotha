@@ -1,0 +1,27 @@
+{% extends "layouts/index.html" %}
+
+{% block content %}
+{% include "templates/includes/header.html" %}
+{% for msg in messages %}
+
+{% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<div class="alert alert-success">
+    {{msg}}
+</div>
+{% endif %}
+
+{% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<div class="alert alert-danger">
+    {{msg}}
+</div>
+{% endif %}
+
+{% endfor %}
+<h1>Sign Up</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
+
+{% endblock  %}

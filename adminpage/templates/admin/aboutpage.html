@@ -1,0 +1,199 @@
+{% extends "layouts/index.html" %}
+{% load static %}
+{% block content %}
+{% include "includesadmin/header.html" %}
+<style>
+   /* this is for about-hamrokotha section */
+
+#about-hamrokotha {
+    /* background-color: aquamarine; */
+    margin-top: 150px;
+    width: 1200px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    line-height: 40px;
+    letter-spacing: 3px;
+}
+
+#about-hamrokotha .info>p {
+    font-size: 16px;
+
+}
+
+h4 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#about-hamrokotha .info ul li {
+    line-height: 50px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#about-hamrokotha .info ul li span {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* about the team members */
+
+#meet-the-team {
+    font-size: 16px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#meet-the-team h4 {
+    font-size: 24px;
+}
+
+#meet-the-team {
+    /* background-color: aquamarine; */
+    margin-top: 150px;
+    width: 1200px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    line-height: 40px;
+    letter-spacing: 3px;
+}
+.team-members{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-members .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+.team-members .member{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.team-members .pic{
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team-members .pic img{
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.member-info{
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 20px;
+}
+.member-info .name{
+    font-size: 16px;
+}
+.member-info .role{
+    font-size: 12px;
+}
+
+</style>
+<section id="about-hamrokotha">
+    <div class="info">
+        <p>Hamro Kotha is a groundbreaking project that aims to simplify the process of finding rooms and flats
+            for
+            students studying in Kathmandu. We understand the challenges that students face when searching for
+            suitable accommodations, and we are dedicated to providing an innovative solution that streamlines
+            this
+            process.
+        </p>
+
+        <h4>What Sets Us Apart</h4>
+        <ul>
+            <li><span>Extensive Database:</span>
+                <p> We have compiled an extensive database of available rooms
+                    and flats in various areas of Kathmandu, catering to a wide range of preferences and
+                    budgets.
+                </p>
+            </li>
+            <li><span>User-Centric:</span> Our platform is designed with the user in mind. We provide
+                detailed information about each accommodation option, including photos, amenities, and pricing,
+                to help students make informed decisions.
+            </li>
+            <li><span>Real-Time Updates:</span> Hamro Kotha offers real-time updates on the availability of
+                rooms and flats. This ensures that students have access to the latest information, reducing the
+                frustration of outdated listings.
+            </li>
+            <li><span>Secure Booking:</span> We prioritize the security of our users. Our platform allows
+                registered users to request reservations, and we facilitate secure payment processing for
+                confirmed bookings.
+            </li>
+            <li><span>Convenience:</span> Hamro Kotha is accessible anytime, anywhere, as long as you have
+                an internet connection. This convenience is especially important for students who may be
+                searching for accommodations from different locations.
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="meet-the-team">
+    <h4>Meet the Team</h4>
+    <p>The Hamro Kotha team is composed of dedicated and passionate individuals who share a common goal of
+        making the accommodation search process hassle-free for students. Here are the team members:
+    </p>
+
+    <div class="team-members">
+        <div class="member">
+            <div class="links">
+                <a href="#">
+                    <i class="fa-regular fa-envelope fa-beat" style="color: #424343;">
+                    </i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-phone fa-beat" style="color: #424343">
+                    </i>
+                </a>
+            </div>
+            <div class="pic">
+                <img src="{% static 'images/team/prabin.png' %}" alt="">
+            </div>
+            <div class="member-info">
+                <p class="name">Prabin Bhusal</p>
+                <p class="role">CEO and Founder</p>
+            </div>
+        </div>
+
+        <div class="member">
+            <div class="links">
+                <a href="#"><i class="fa-regular fa-envelope fa-beat" style="color: #424343;"></i></a>
+                <a href="#"><i class="fa-solid fa-phone fa-beat" style="color: #424343"></i></a>
+            </div>
+            <div class="pic">
+                <img src="{% static 'images/team/bikash 1.png' %}" alt="">
+            </div>
+            <div class="member-info">
+                <p class="name">Yagya Raj Joshi</p>
+                <p class="role">Call Representer and CO-Founder</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}

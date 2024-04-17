@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* footer */
+footer p {
+    font-size: 16px;
+}
+
+.footer-content {
+    margin-top: 70px;
+    width: 100%;
+    padding: 20px 40px 10px 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background-color: Rgb(199, 182, 182);
+    justify-content: space-between;
+}
+
+.footer-logo p {
+    width: 400px;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links ul li a {
+    color: black;
+    font-size: 16px;
+}
+
+.footer-bottom {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.footer-heading {
+    font-size: 24px;
+}
+</style>
+<body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'images/logo.png' %}" alt="Hamro Kotha Logo">
+                <p>Thank you for choosing Hamro Kotha for your accommodation needs.</p>
+            </div>
+            <div class="footer-links">
+                <p class="footer-heading">Quick Links</p>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="/src/html/aboutus.html">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p class="footer-heading">Contact Us</p>
+                <p>Email: info@hamrokotha.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hamro Kotha. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

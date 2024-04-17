@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* this is for about-hamrokotha section */
+
+#about-hamrokotha {
+    /* background-color: aquamarine; */
+    margin-top: 150px;
+    width: 1200px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    line-height: 40px;
+    letter-spacing: 3px;
+}
+
+#about-hamrokotha .info>p {
+    font-size: 16px;
+
+}
+
+h4 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#about-hamrokotha .info ul li {
+    line-height: 50px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#about-hamrokotha .info ul li span {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+/* about the team members */
+
+#meet-the-team {
+    font-size: 16px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#meet-the-team h4 {
+    font-size: 24px;
+}
+
+#meet-the-team {
+    /* background-color: aquamarine; */
+    margin-top: 150px;
+    width: 1200px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    line-height: 40px;
+    letter-spacing: 3px;
+}
+.team-members{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team-members .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+.team-members .member{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.team-members .pic{
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team-members .pic img{
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.member-info{
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 20px;
+}
+.member-info .name{
+    font-size: 16px;
+}
+.member-info .role{
+    font-size: 12px;
+}
+
+

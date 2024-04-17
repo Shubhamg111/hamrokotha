@@ -1,0 +1,157 @@
+{% extends "layouts/index.html" %}
+{% load static %}
+{% block content %}
+{% include "includesuser/header.html" %}
+
+<style>
+    /* .card-body {
+        height: 320px;
+    } */
+    .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.open-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.open-button:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}
+
+</style>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          
+            <hr>
+            <div class="row">
+                {% for post in products %}
+                <img src="{{ post.product_image}}" alt="">
+                
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- 
+<div class="container my-5">
+    <h2>Item List</h2>
+  
+        
+
+            <hr>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for item in products %}
+                <div class="col">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="category-image">
+                                <img src="{{item.product_image }}" alt="Product Image" class="w-100" height="170px">
+                            </div>
+                            <h4 class="text-center">{{ item.name | slice:'20'}}</h4>
+                            <p class="">{{ item.category}}</p>
+
+                            <span class="float-start opacity-50">Rs.{{ item.price | stringformat:'d'}}</span>
+                            <button class="open-button float-end btn btn-primary" onclick="togglePopup()">View Details</button>
+
+                            <div class="popup-overlay" id="popup">
+                              <div class="popup-content">
+                                <h2>{{item.name}}</h2>
+                                <div class="description border" style="height: 300px; overflow: scroll;" >
+                                <p>{{item.description}}</p>
+                            </div>
+                                <button class="close-button" onclick="togglePopup()">Close</button>
+                              </div>
+                            </div>
+                            
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- ------------------------------------------------------------- 
+             -->
+             <div class="container my-5">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    {% for product in products %}
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{product.product_image}}" class=" card-img-top w-100" height="170px" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name | slice:'17'}}</h5>
+                                <p class="">{{ item.category}}</p>
+                                <h5 class="card-title">Rs.{{product.price}}</h5>
+            
+                                <button class="open-button float-end btn btn-primary" onclick="togglePopup()">View Details</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="popup-overlay" id="popup">
+                        <div class="popup-content">
+                          <h2>{{product.name}}</h2>
+                          <div class="description border" style="height: 300px; overflow: scroll;" >
+                          <p>{{product.description}}</p>
+                      </div>
+                          <button class="close-button" onclick="togglePopup()">Close</button>
+                        </div>
+                      </div>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+            
+
+           
+            <script>
+                function togglePopup() {
+  const popup = document.getElementById('popup');
+  popup.style.display = popup.style.display === 'none' ? 'flex' : 'none';
+}
+            </script>
+
+
+{% include "includesuser/footer.html" %}
+{% endblock %}
