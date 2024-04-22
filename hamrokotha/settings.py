@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-19%biyskv*xm1ix40bsx1m4bl^xdi+=ujhwb_ud_dv1mud=2v3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hamrokotha.wsgi.application'
+
 
 
 # Database
@@ -122,10 +122,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+# STATICFILES_DIRS=[
+#     # os.path.join(BASE_DIR,'static')
+# ]
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
